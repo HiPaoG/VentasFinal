@@ -35,7 +35,7 @@ class Compra(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cantidad = models.IntegerField()
-    fecha = models.DateField(auto_now=True)
+    fecha = models.DateField(default=timezone.now)
 
 class CompraInLine(admin.TabularInline):
     model = Compra
